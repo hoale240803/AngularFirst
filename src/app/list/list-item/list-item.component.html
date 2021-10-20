@@ -1,0 +1,8 @@
+<p>list-item works!</p>
+<div *ngFor="let user of users">
+  <div>{{ user.name }}</div>
+  <div>{{ user.age }}</div>
+  <div>{{ user.isMarried }}</div>
+
+  <button (click)="updateUsers('Linh')">Update User List</button>
+</div>
