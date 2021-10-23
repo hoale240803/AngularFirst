@@ -1,3 +1,4 @@
+import { ObservableTestService } from './../services/observable-test';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,9 +10,10 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   user: { id: number, name: string } = { id: 0, name: "" }
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private observableTestService: ObservableTestService, private router: Router) {
 
   }
+
 
   ngOnInit(): void {
     this.user = {
@@ -19,6 +21,9 @@ export class HeaderComponent implements OnInit {
       name: this.route.snapshot.params['name']
     }
   }
+  passDataThroughObservable() {
+    this.observableTestService.subjectToEmitData.next("dataFromHeader");
+    this.router.navigate(['/homeobservable']);
+  }
 
 }
-  

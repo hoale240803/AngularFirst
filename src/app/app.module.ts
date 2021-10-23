@@ -1,3 +1,4 @@
+import { ObservableTestService } from './services/observable-test';
 import { ListItemComponent } from './list/list-item/list-item.component';
 import { ListComponent } from './list/list.component';
 import { UserRootService } from './services/user-root.services';
@@ -16,12 +17,15 @@ import { TableComponent } from './table/table.component';
 import { FindItemsService } from './services/find-item.service';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
+import { HomeObservableComponent } from './pages/home-observable/home-observable.component';
 
 const appRouter: Routes = [
   { path: '', component: HomeComponent },
   // { path: 'user/:id/:name', component: HeaderComponent },
   { path: 'itemList', component: HeaderComponent },
+  { path: 'header', component: HeaderComponent },
   { path: 'user', component: HeaderComponent },
+  { path: 'homeobservable', component: HomeObservableComponent },
 
 
 ]
@@ -31,6 +35,7 @@ const appRouter: Routes = [
     HeaderComponent,
     TableComponent,
     HomeComponent,
+    HomeObservableComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +44,7 @@ const appRouter: Routes = [
     RouterModule.forRoot(appRouter)
 
   ],
-  providers: [FindItemsService, ItemsService, UserRootService, UpdateItemsService],
+  providers: [FindItemsService, ItemsService, UserRootService, UpdateItemsService, ObservableTestService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

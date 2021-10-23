@@ -2,8 +2,10 @@
 <app-list></app-list> -->
 <div class="">
   <li><a [routerLink]="['/']">Home</a></li>
+  <li><a [routerLink]="['/header']">Header</a></li>
   <li><a [routerLink]="['/user']">User</a></li>
   <li><a [routerLink]="['/itemList']">ItemList</a></li>
+  <li><a [routerLink]="['/homeobservable']">Homeobservable</a></li>
 </div>
 <button (click)="returnHomePage()">Return Home page</button>
 <router-outlet></router-outlet>
