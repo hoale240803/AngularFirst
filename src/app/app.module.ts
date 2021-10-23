@@ -15,11 +15,14 @@ import { ListModule } from './list/list.module';
 import { TableComponent } from './table/table.component';
 import { FindItemsService } from './services/find-item.service';
 import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './pages/home/home.component';
 
 const appRouter: Routes = [
-  { path: '', component: ListComponent },
-  { path: 'user', component: ListComponent },
+  { path: '', component: HomeComponent },
+  // { path: 'user/:id/:name', component: HeaderComponent },
   { path: 'itemList', component: HeaderComponent },
+  { path: 'user', component: HeaderComponent },
+
 
 ]
 @NgModule({
@@ -27,6 +30,7 @@ const appRouter: Routes = [
     AppComponent,
     HeaderComponent,
     TableComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
