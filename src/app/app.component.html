@@ -6,6 +6,15 @@
   <li><a [routerLink]="['/user']">User</a></li>
   <li><a [routerLink]="['/itemList']">ItemList</a></li>
   <li><a [routerLink]="['/homeobservable']">Homeobservable</a></li>
+  <li><a [routerLink]="['/handleform']">Handle Form</a></li>
+  <li>
+    <a [routerLink]="['/handleformwithviewchild']"
+      >Handle Form With View Child</a
+    >
+  </li>
+  <li>
+    <a [routerLink]="['/handleformvalidation']">Handle Form with Validation</a>
+  </li>
 </div>
 <button (click)="returnHomePage()">Return Home page</button>
 <router-outlet></router-outlet>

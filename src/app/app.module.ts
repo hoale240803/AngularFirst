@@ -18,6 +18,10 @@ import { FindItemsService } from './services/find-item.service';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { HomeObservableComponent } from './pages/home-observable/home-observable.component';
+import { HandleFormComponent } from './pages/handle-form/handle-form.component';
+import { FormsModule } from '@angular/forms';
+import { ViewChildComponent } from './pages/handle-form/view-child/view-child.component';
+import { ValidationComponent } from './pages/handle-form/validation/validation.component';
 
 const appRouter: Routes = [
   { path: '', component: HomeComponent },
@@ -26,6 +30,10 @@ const appRouter: Routes = [
   { path: 'header', component: HeaderComponent },
   { path: 'user', component: HeaderComponent },
   { path: 'homeobservable', component: HomeObservableComponent },
+  { path: 'handleform', component: HandleFormComponent },
+  { path: 'handleformwithviewchild', component: ViewChildComponent },
+  { path: 'handleformvalidation', component: ValidationComponent },
+
 
 
 ]
@@ -36,11 +44,16 @@ const appRouter: Routes = [
     TableComponent,
     HomeComponent,
     HomeObservableComponent,
+    HandleFormComponent,
+    ViewChildComponent,
+    ValidationComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ListModule,
+    FormsModule,
     RouterModule.forRoot(appRouter)
 
   ],
