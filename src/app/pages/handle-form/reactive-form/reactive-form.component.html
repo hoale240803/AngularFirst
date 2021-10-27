@@ -1,10 +1,10 @@
 <!-- handle with ngForm -->
 
-<p>handle-form with view-child works!</p>
+<p>handle-form with Reactive group works!</p>
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-      <form (ngSubmit)="onSubmit()" #formExample="ngForm">
+      <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
         <!-- INPUT -->
         <div id="user-data">
           <div class="form-group">
@@ -14,7 +14,7 @@
               id="username"
               class="form-control"
               ngModel
-              name="userName"
+              formControlName="userName"
             />
           </div>
           <button class="btn btn-default" type="button">
@@ -27,25 +27,19 @@
               id="email"
               class="form-control"
               ngModel
-              name="email"
+              formControlName="email"
               required
               email
-              #email="ngModel"
             />
-            <span class="bg-danger" *ngIf="!email.valid && email.touched"
+            <!-- <span class="bg-danger" *ngIf="!email.valid && email.touched"
               >Please enter valid email!</span
-            >
+            > -->
           </div>
         </div>
         <!-- COMBOBOX -->
         <div class="form-group">
           <label for="secret">Secret Questions</label>
-          <select
-            id="secret"
-            class="form-control"
-            [ngModel]="defaultValueDropbox"
-            name="secret"
-          >
+          <select id="secret" class="form-control" name="secret">
             <option value="pet">Your first Pet?</option>
             <option value="teacher">Your first teacher?</option>
           </select>
@@ -55,7 +49,6 @@
           <label for="answer">Your Reply</label>
           <textarea
             class="form-control"
-            [(ngModel)]="answerQuestion"
             name="answer"
             id="answer"
             rows="3"
@@ -81,23 +74,17 @@
           </label>
         </div>
         <!-- Btn submit -->
-        <button
-          class="btn btn-primary mt-5"
-          [disabled]="!formExample.valid"
-          type="submit"
-        >
-          Submit
-        </button>
+        <button class="btn btn-primary mt-5" type="submit">Submit</button>
       </form>
       <hr />
-      <div class="row" *ngIf="isSubmitted">
+      <!-- <div class="row" *ngIf="isSubmitted">
         <h3>Your data</h3>
         <p>UserName: {{ user.userName }}</p>
         <p>Email:{{ user.email }}</p>
         <p>Secret Question: {{ user.secretQuestion }}</p>
         <p>Answer:{{ user.answer }}</p>
         <p>Gender:{{ user.gender }}</p>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

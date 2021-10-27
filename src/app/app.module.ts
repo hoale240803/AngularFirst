@@ -19,9 +19,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { HomeObservableComponent } from './pages/home-observable/home-observable.component';
 import { HandleFormComponent } from './pages/handle-form/handle-form.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ViewChildComponent } from './pages/handle-form/view-child/view-child.component';
 import { ValidationComponent } from './pages/handle-form/validation/validation.component';
+import { ReactiveFormComponent } from './pages/handle-form/reactive-form/reactive-form.component';
 
 const appRouter: Routes = [
   { path: '', component: HomeComponent },
@@ -33,6 +34,7 @@ const appRouter: Routes = [
   { path: 'handleform', component: HandleFormComponent },
   { path: 'handleformwithviewchild', component: ViewChildComponent },
   { path: 'handleformvalidation', component: ValidationComponent },
+  { path: 'handleformreactiveGroup', component: ReactiveFormComponent },
 
 
 
@@ -47,6 +49,7 @@ const appRouter: Routes = [
     HandleFormComponent,
     ViewChildComponent,
     ValidationComponent,
+    ReactiveFormComponent,
 
   ],
   imports: [
@@ -54,6 +57,7 @@ const appRouter: Routes = [
     AppRoutingModule,
     ListModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRouter)
 
   ],
