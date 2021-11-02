@@ -23,6 +23,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ViewChildComponent } from './pages/handle-form/view-child/view-child.component';
 import { ValidationComponent } from './pages/handle-form/validation/validation.component';
 import { ReactiveFormComponent } from './pages/handle-form/reactive-form/reactive-form.component';
+// import { PipeTestComponent } from './pages/pipe-test/pipe-test.component';
+import { AnimationsComponent } from './pages/animations/animations.component';
+//ANIMATIONS
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const appRouter: Routes = [
   { path: '', component: HomeComponent },
@@ -35,6 +39,8 @@ const appRouter: Routes = [
   { path: 'handleformwithviewchild', component: ViewChildComponent },
   { path: 'handleformvalidation', component: ValidationComponent },
   { path: 'handleformreactiveGroup', component: ReactiveFormComponent },
+  { path: 'animations', component: AnimationsComponent },
+  // { path: 'pipe', component: PipeTestComponent },
 
 
 
@@ -50,6 +56,11 @@ const appRouter: Routes = [
     ViewChildComponent,
     ValidationComponent,
     ReactiveFormComponent,
+    // PipeTestComponent,
+    // ShortenPipe,
+    // FilterPipe,
+    AnimationsComponent,
+    AnimationsComponent
 
   ],
   imports: [
@@ -58,6 +69,7 @@ const appRouter: Routes = [
     ListModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(appRouter)
 
   ],

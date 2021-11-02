@@ -1,6 +1,6 @@
 <!-- <app-header></app-header>
 <app-list></app-list> -->
-<div class="">
+<div class="container">
   <li><a [routerLink]="['/']">Home</a></li>
   <li><a [routerLink]="['/header']">Header</a></li>
   <li><a [routerLink]="['/user']">User</a></li>
@@ -20,6 +20,13 @@
       >Handle Form with Reactive group</a
     >
   </li>
+  <li>
+    <a [routerLink]="['/pipe']">Pipe</a>
+  </li>
+  <li>
+    <a [routerLink]="['/animations']">Animations</a>
+  </li>
+  <button (click)="returnHomePage()">Return Home page</button>
 </div>
-<button (click)="returnHomePage()">Return Home page</button>
+
 <router-outlet></router-outlet>
